@@ -1,6 +1,6 @@
 FROM python:3.8-alpine
 
-ENV INSTALL_PATH /jackpot
+ENV INSTALL_PATH /main
 RUN mkdir -p $INSTALL_PATH
 
 WORKDIR $INSTALL_PATH

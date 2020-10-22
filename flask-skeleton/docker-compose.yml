@@ -2,7 +2,10 @@ version: '2'
 
 services:
   app:
+    # build an image from the current directory
     build: .
+    # > takes multilines and take as a single line
+    # reload is used only in docker-compose and not in Dockerfile because it's used for development and we don't want the server to reload when anything changes
     command: >
       gunicorn -b 0.0.0.0:8000
         --access-logfile -
@@ -10,7 +13,8 @@ services:
         "main.app:create_app()"
     environment:
       PYTHONUNBUFFERED: 'true'
+    # volumes tells docker to take what's in the current directory which is the flask-skeleton application and mount it to the main folder inside the container. We can edit our code base and send to docker without rebuilding the image
     volumes:
-      - '.:/jackpot'
+      - '.:/main'
     ports:
       - '8000:8000'
