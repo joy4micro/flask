@@ -18,3 +18,6 @@ To test, below are the steps we can follow
 2) Get call to http://localhost:5000/employees to get all the employees
 3) Get call to http://localhost:5000/employees/<employee_id> to get only the requested employee details
 ---
+
+To run on docker, firstly we need to change the port to 0.0.0.0 in application.py
+and then docker-compose build and docker-compose up

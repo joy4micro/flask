@@ -11,4 +11,4 @@ api.add_resource(Employee, '/employee', methods=['POST'], endpoint='employee')
 api.add_resource(Home, '/', methods=['GET'])
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0')
