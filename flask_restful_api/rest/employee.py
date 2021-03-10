@@ -1,21 +1,18 @@
 from flask import request
 from flask_restful import Resource
-
-employee_dict = {}
+from employeeRepository import EmployeeRepository
 
 
 class Employee(Resource):
 
     def get(self, employee_id=None):
+        employeeRepository = EmployeeRepository()
         if employee_id is None:
-            return str(employee_dict)
-        elif str(employee_id) in employee_dict:
-            return str(employee_dict[employee_id])
-        return {}
+            return employeeRepository.find_all()
+        else:
+            return employeeRepository.find(str(employee_id))
 
     def post(self):
         employee = request.get_json()
-        id = str(employee['id'])
-        employee_dict[id] = {'name': employee['name'], 'address': employee['address']}
-        return employee
-
+        employeeRepository = EmployeeRepository()
+        return employeeRepository.insert_new_employee(str(employee['id']), employee['name'], employee['address'])

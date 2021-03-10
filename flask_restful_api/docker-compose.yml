@@ -1,0 +1,16 @@
+version: '3'
+services:
+  employee-service:
+    build: rest
+    ports:
+      - "5000:5000"
+    depends_on:
+      - empdb
+    links:
+      - empdb
+
+  empdb:
+    image: mongo
+    volumes:
+    - .data/mdata:/data/db # mongodb persistence
+    

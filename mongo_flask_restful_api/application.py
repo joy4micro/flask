@@ -1,14 +1,15 @@
-from flask import Flask
-from flask_restful import Api
-from rest.employee import Employee
-from rest.home import Home
+import flask
+import flask_restful
 
-app = Flask(__name__)
-api = Api(app)
+from home import Home
+from employee import Employee
+
+app = flask.Flask(__name__)
+api = flask_restful.Api(app)
 
 api.add_resource(Employee, '/employees', '/employees/<employee_id>', methods=['GET'], endpoint='employees')
 api.add_resource(Employee, '/employee', methods=['POST'], endpoint='employee')
 api.add_resource(Home, '/', methods=['GET'])
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)
