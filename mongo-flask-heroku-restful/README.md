@@ -39,11 +39,17 @@ We may get, exceptions if we add ip address as shown below
     or
     Unknown, rtt: None, error=AutoReconnect
 
-    5) We need to create database by going to
+    5) we need to create users to access the database
+    Database Access -> Database Users -> Add New Database User -> Password 
+
+    6) Add a username and password and click on Add User
+
+
+    7) We need to create database by going to
 
     Collections -> Create Database (say demodb)
 
-    6) We can create collections by going to 
+    8) We can create collections by going to 
 
     Collections -> demodb -> Create Collection
 
