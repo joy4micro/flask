@@ -1,13 +1,13 @@
-app:
+application:
   build: .
   command: python -u application.py
   ports:
     - "5000:5000"
   volumes:
-    - .:/app
+    - .:/application
   links:
     - db
-  env_file: .env
+  env_file: resources/.env
   
 db:
   image: mongo:latest

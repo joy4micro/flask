@@ -1,8 +1,8 @@
 import flask
 import flask_restful
 
-from home import Home
-from employee import Employee
+from controller.home import Home
+from controller.employee import Employee
 
 app = flask.Flask(__name__)
 api = flask_restful.Api(app)

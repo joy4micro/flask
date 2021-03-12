@@ -1,6 +1,6 @@
 from flask import request
 from flask_restful import Resource
-from employeeRepository import EmployeeRepository
+from repository.employeeRepository import EmployeeRepository
 from flask_cors import CORS,cross_origin
 
 
