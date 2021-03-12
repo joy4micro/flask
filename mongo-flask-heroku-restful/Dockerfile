@@ -13,10 +13,9 @@ WORKDIR /application
 #move all the current files to the app folder
 ADD . .
 
-RUN pip install -r requirements.txt
+RUN pip install -r resources/requirements.txt
 
 RUN adduser myuser
 USER myuser
 
-#CMD gunicorn --bind 0.0.0.0:$PORT --reload
 CMD gunicorn --bind 0.0.0.0:$PORT wsgi

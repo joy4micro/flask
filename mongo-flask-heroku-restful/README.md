@@ -74,16 +74,20 @@ Steps to deploy and run the project on heroku
         Insert KEY and VALUE and click on add
 
 3) Since, it's a docker container project, we have to execute the below command to login to Heroku
-heroku container:login  
+        
+        heroku container:login  
 
 4) Heroku will build and push the images to the container registry using the below command
-heroku container:push web 
+        
+        heroku container:push web 
 
 5) We can create a new release using
-heroku container:release web
+        
+        heroku container:release web
 
 6) To open the app in our browser, we can execute
-heroku open
+        
+        heroku open
 
 7) If anytime we want to see the recent log of the server, we can use 
 

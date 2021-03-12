@@ -1,5 +1,5 @@
 from flask import jsonify
-from databaseConfig import DatabaseConfig
+from config.databaseConfig import DatabaseConfig
 
 TABLE_NAME = 'employee'
 
