@@ -1,0 +1,20 @@
+app:
+  build: .
+  command: python -u application.py
+  ports:
+    - "5000:5000"
+  volumes:
+    - .:/app
+  links:
+    - db
+  env_file: .env
+  
+db:
+  image: mongo:latest
+  hostname: mongodb
+  environment:
+    - MONGO_INITDB_DATABASE=empdb
+    - MONGO_INITDB_ROOT_USERNAME=admin
+    - MONGO_INITDB_ROOT_PASSWORD=pass
+  ports:
+    - 27017:27017
